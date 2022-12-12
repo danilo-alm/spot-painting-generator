@@ -71,7 +71,7 @@ filename = uniquify('results/work-of-art.png')
 
 # Save image as an Encapsulated PostScript (EPS) 
 ts = turtle.getscreen()
-ps = ts.getcanvas().postscript(file=filename)
+ps = ts.getcanvas().postscript(file=filename, pagewidth=1920)
 
 # Convert EPS to PNG
 im = Image.open(filename)
