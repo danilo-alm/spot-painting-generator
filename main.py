@@ -1,6 +1,6 @@
-import colorgram
 from tkinter import filedialog
 from turtle import Turtle, Screen
+import colorgram
 import random
 import PIL
 from PIL import Image
@@ -68,9 +68,11 @@ if not os.path.exists('results/'):
 
 filename = uniquify('results/work-of-art.png')
 
+# Save image as an Encapsulated PostScript (EPS) 
 ts = turtle.getscreen()
 ps = ts.getcanvas().postscript(file=filename)
 
+# Convert EPS to PNG
 im = Image.open(filename)
 fig = im.convert('RGBA')
 fig.save(filename, lossless = True)
