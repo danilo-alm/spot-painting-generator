@@ -46,7 +46,7 @@ dots_per_row = 10
 space_between_dots = 50
 
 screen = Screen()
-sc = dots_per_row * space_between_dots + 100
+sc = dots_per_row * space_between_dots + 50
 screen.setup(sc, sc)
 screen.colormode(255)
 
