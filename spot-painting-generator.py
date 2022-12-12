@@ -1,10 +1,17 @@
 from tkinter import filedialog
 from turtle import Turtle, Screen
-import colorgram
-import random
+from sys import argv
+import argparse
 import PIL
 from PIL import Image
+import colorgram
+import random
 import os
+
+parser = argparse.ArgumentParser('Generate Hirst\'s Spot Paintings')
+group = parser.add_mutually_exclusive_group()
+group.add_argument('-r', '--random', action='store_true', help='random colors')
+args = parser.parse_args()
 
 # https://stackoverflow.com/questions/13852700/create-file-but-if-name-exists-add-number
 def uniquify(path):
@@ -17,24 +24,25 @@ def uniquify(path):
 
     return path
 
-# File picker dialog
-filename = filedialog.askopenfilename(initialdir = ".",title ="Select an image")
+if not args.random:
+    # File picker dialog
+    filename = filedialog.askopenfilename(initialdir=".",title="Select an image")
 
-# Load image
-try:
-    im = Image.open(filename)
-except OSError:
-    print('Could not open image.')
-    exit()
+    # Load image
+    try:
+        im = Image.open(filename)
+    except OSError:
+        print('Could not open image.')
+        exit()
 
-# Resize image
-im.thumbnail((400, 400))
+    # Resize image
+    im.thumbnail((400, 400))
 
-try:
-    color_list = [tuple(i for i in color.rgb) for color in colorgram.extract(im, 30)]
-except PIL.UnidentifiedImageError:
-    print('Could not extract colors from image')
-    exit()
+    try:
+        color_list = [tuple(i for i in color.rgb) for color in colorgram.extract(im, 30)]
+    except PIL.UnidentifiedImageError:
+        print('Could not extract colors from image')
+        exit()
 
 turtle = Turtle()
 turtle.penup()
@@ -56,7 +64,11 @@ turtle.sety(-pos)
 
 drawn_in_row = 0
 for _ in range(dots_per_row**2):
-    turtle.dot(dotsize, random.choice(color_list))
+    if args.random:
+        color = tuple(random.randint(0,255) for _ in range(3))
+    else:
+        color = random.choice(color_list)
+    turtle.dot(dotsize, color)
     turtle.forward(space_between_dots)
     drawn_in_row += 1
     if drawn_in_row >= dots_per_row:
