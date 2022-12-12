@@ -41,9 +41,9 @@ turtle.penup()
 turtle.speed(0)
 turtle.hideturtle()
 
-dotsize = 30
+dotsize = 20
 dots_per_row = 10
-space_between_dots = 70
+space_between_dots = 50
 
 screen = Screen()
 sc = dots_per_row * space_between_dots + 200
