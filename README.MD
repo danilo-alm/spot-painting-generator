@@ -22,5 +22,19 @@ You can run the script now: <br>
 `python ./spot-painting-generator.py` <br>
 After you pick an image, the spot painting will be generated and saved in results/
 
+## Options
+Type `python spot-painting-generator.py --help` to see the available options...
+```
+usage: Generate Hirst's Spot Paintings [-h] [-w] [-H] [-s] [-d] [-r]
+
+options:
+  -h, --help        show this help message and exit
+  -w , --width      number of dots in width
+  -H , --height     number of dots in height
+  -s , --size       dot size
+  -d , --distance   distance between each dot
+  -r, --random      random colors
+```
+
 ## Idea
 This script was made as one of the activities proposed by [this Python course](https://www.udemy.com/course/100-days-of-code)
