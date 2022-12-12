@@ -1,6 +1,6 @@
 # Spot Painting Generator
 ## Spot Paintings
-According to wikipedia, Damien Steven Hirst is an English artist, entrepreneur, and art collector. He is reportedly the United Kingdom's richest living artist, with his wealth estimated at US$384 million in the 2020 Sunday Times Rich List. <br>
+According to Wikipedia, Damien Steven Hirst is an English artist, entrepreneur, and art collector. He is reportedly the United Kingdom's richest living artist, with his wealth estimated at US$384 million in the 2020 Sunday Times Rich List. <br>
 His "Spot Paintings" have been sold for up to 1.275.000 pounds (roughly 1.5M dollars). <br>
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Damien_Hirst_%286712600369%29.jpg" alt="Damien Hirst standing in front of one of his spot paintings" width="600"/>
