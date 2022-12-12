@@ -41,8 +41,9 @@ turtle.penup()
 turtle.speed(0)
 turtle.hideturtle()
 
+dotsize = 30
 dots_per_row = 10
-space_between_dots = 50
+space_between_dots = 70
 
 screen = Screen()
 sc = dots_per_row * space_between_dots + 200
@@ -55,7 +56,7 @@ turtle.sety(-pos)
 
 drawn_in_row = 0
 for _ in range(dots_per_row**2):
-    turtle.dot(20, random.choice(color_list))
+    turtle.dot(dotsize, random.choice(color_list))
     turtle.forward(space_between_dots)
     drawn_in_row += 1
     if drawn_in_row >= dots_per_row:
