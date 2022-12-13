@@ -99,5 +99,6 @@ ps = ts.getcanvas().postscript(file=filename, pagewidth=1920)
 im = Image.open(filename)
 fig = im.convert('RGBA')
 fig.save(filename, lossless = True)
+print(f'Saved as {filename}')
 
 screen.exitonclick()
